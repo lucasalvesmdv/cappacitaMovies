@@ -1,6 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const app = express();
+const dataBase = require ("./database/databaseMysql")
 require("dotenv/config");
 const axios = require("axios");
 const api_key = process.env.API_KEY;
@@ -26,5 +27,13 @@ app.get("/:id", async (req, res) => {
     res.send(data);
   } catch (error) {}
 });
+
+app.post("/comentario", async (req,res) =>{
+  const  createComentario = {nome:req.body.nome, comentario:req.body.comentario}
+  const insertComentario = `INSERT TO cappacita_filmes `
+   
+
+
+})
 
 app.listen(3003);

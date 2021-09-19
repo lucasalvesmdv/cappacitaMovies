@@ -27,7 +27,19 @@ async function name() {
     let lista = "";
     for (let filme of json)
       lista += `
-      <img src=https://image.tmdb.org/t/p/w300${filme.poster_path} id =${filme.id} onclick = "redId(${filme.id})" /> `;
+      <div class="movie-list" >
+            
+            
+      <div class="movie-container">
+          <div class="movie">
+          <img src=https://image.tmdb.org/t/p/w500${filme.poster_path} id =${filme.id} onclick = "redId(${filme.id})" />
+              <p class="movie-title">${filme.title}</p>
+          </div>
+      </div>
+      
+  </div> 
+
+      `;
 
     document.querySelector("#imagem").innerHTML = lista;
   } catch (error) {
